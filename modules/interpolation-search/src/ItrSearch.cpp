@@ -1,4 +1,6 @@
-#include "ItrSearch.h"
+// Copyright 2019 Perov Dima
+
+#include "include/ItrSearch.h"
 
 ItrSearch::ItrSearch(unsigned* myPtrData, unsigned mySizeData){
     ptrSortedData  = myPtrData;
