@@ -7,16 +7,18 @@ class ItrSearch {
     
     protected:
 
-    unsigned* ptrSortedData;
-    size_t sizeData;
+    unsigned* ptrData;
+    unsigned sizeData;
     long int findIndex;
         
     public:
     
-    ItrSearch(unsigned* myPtrData, unsigned  mySizeData);
+    ItrSearch(unsigned* myPtrSortedData, unsigned  mySizeData);
     ItrSearch();
     ~ItrSearch();
     long int GetFindIndex();
+    unsigned GetSizeData();
+    unsigned* GetPtrData(); 
     void SetSortedData(unsigned* myPtrData, unsigned mySizeData);
     long int Search(unsigned toFind);
     long int Search(unsigned toFind, unsigned myLeft, unsigned myRight);
