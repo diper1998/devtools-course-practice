@@ -1,3 +1,5 @@
+// Copyright 2019 Perov Dima
+
 #include "include/ItrSearch.h"
 
 ItrSearch::ItrSearch(unsigned* myPtrData, unsigned mySizeData){
@@ -14,7 +16,7 @@ ItrSearch::~ItrSearch(){
     ptrData = NULL;
 }
 
-long int ItrSearch::GetFindIndex(){
+int ItrSearch::GetFindIndex(){
     return findIndex;
 }
 
@@ -31,7 +33,7 @@ void ItrSearch::SetSortedData(unsigned* myPtrData, unsigned mySizeData){
     sizeData = mySizeData;
 }
 
-long int ItrSearch::Search(unsigned toFind){
+int ItrSearch::Search(unsigned toFind){
      
     unsigned mid;
     unsigned left = 0;
@@ -63,7 +65,7 @@ long int ItrSearch::Search(unsigned toFind){
     return findIndex; // Not found
 }
 
-long int ItrSearch::Search(unsigned toFind, unsigned myLeft, unsigned myRight){
+int ItrSearch::Search(unsigned toFind, unsigned myLeft, unsigned myRight){
      
     unsigned mid;
     unsigned left = myLeft;
