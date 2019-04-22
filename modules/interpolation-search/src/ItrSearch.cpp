@@ -1,4 +1,4 @@
-#include "ItrSearch.h"
+#include "include/ItrSearch.h"
 
 ItrSearch::ItrSearch(unsigned* myPtrData, unsigned mySizeData){
     ptrData  = myPtrData;
