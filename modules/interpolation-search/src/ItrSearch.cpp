@@ -39,38 +39,7 @@ int ItrSearch::Search(unsigned toFind) {
     unsigned right = sizeData - 1;
 
     while (ptrData[left] < toFind && ptrData[right] > toFind) {
-        mid = left + ((toFind - ptrData[left]) * (right - left)) / (ptrData[right] - ptrData[left]);
-
-        if (ptrData[mid] < toFind) {
-            left = mid + 1;
-        } else if (ptrData[mid] > toFind) {
-            right = mid - 1;
-        } else {
-            findIndex = mid;
-            return findIndex;
-        }
-    }
-
-    if (ptrData[left] == toFind){
-        findIndex = left;
-        return findIndex;
-    }
-    if (ptrData[right] == toFind){
-        findIndex = right;
-        return findIndex;
-    }
-
-    findIndex = -1;
-    return findIndex; // Not found
-}
-
-int ItrSearch::Search(unsigned toFind, unsigned myLeft, unsigned myRight){
-    unsigned mid;
-    unsigned left = myLeft;
-    unsigned right = myRight;
-
-    while (ptrData[left] < toFind && ptrData[right] > toFind) {
-        mid = left + ((toFind - ptrData[left]) * 
+        mid = left + ((toFind - ptrData[left]) *
         (right - left)) / (ptrData[right] - ptrData[left]);
 
         if (ptrData[mid] < toFind) {
@@ -83,15 +52,47 @@ int ItrSearch::Search(unsigned toFind, unsigned myLeft, unsigned myRight){
         }
     }
 
-    if (ptrData[left] == toFind){
+    if (ptrData[left] == toFind) {
         findIndex = left;
         return findIndex;
     }
-    if (ptrData[right] == toFind){
+    if (ptrData[right] == toFind) {
         findIndex = right;
         return findIndex;
     }
 
     findIndex = -1;
-    return findIndex; //  Not found
+    return findIndex;  // Not found
+}
+
+int ItrSearch::Search(unsigned toFind, unsigned myLeft, unsigned myRight) {
+    unsigned mid;
+    unsigned left = myLeft;
+    unsigned right = myRight;
+
+    while (ptrData[left] < toFind && ptrData[right] > toFind) {
+        mid = left + ((toFind - ptrData[left]) *
+        (right - left)) / (ptrData[right] - ptrData[left]);
+
+        if (ptrData[mid] < toFind) {
+            left = mid + 1;
+        } else if (ptrData[mid] > toFind) {
+            right = mid - 1;
+        } else {
+            findIndex = mid;
+            return findIndex;
+        }
+    }
+
+    if (ptrData[left] == toFind) {
+        findIndex = left;
+        return findIndex;
+    }
+    if (ptrData[right] == toFind) {
+        findIndex = right;
+        return findIndex;
+    }
+
+    findIndex = -1;
+    return findIndex;  // Not found
 }
