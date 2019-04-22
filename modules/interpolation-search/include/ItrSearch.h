@@ -7,19 +7,19 @@
 
 class ItrSearch {
  protected:
-    unsigned* ptrData;
+    int* ptrData;
     unsigned sizeData;
-    int findIndex;
+    int64_t findIndex;
 
  public:
-    ItrSearch(unsigned* myPtrSortedData, unsigned  mySizeData);
+    ItrSearch(int* myPtrSortedData, unsigned mySizeData);
     ItrSearch();
     ~ItrSearch();
-    int GetFindIndex();
+    int64_t GetFindIndex();
     unsigned GetSizeData();
-    unsigned* GetPtrData();
-    void SetSortedData(unsigned* myPtrData, unsigned mySizeData);
-    int Search(unsigned toFind, unsigned myLeft = 0, unsigned myRight = 0);
+    int* GetPtrData();
+    void SetSortedData(int* myPtrData, unsigned mySizeData);
+    int64_t Search(int toFind, unsigned myLeft = 0, unsigned myRight = 0);
 };
 
 #endif  // MODULES_INTERPOLATION_SEARCH_INCLUDE_ITRSEARCH_H_"

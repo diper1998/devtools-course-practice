@@ -2,21 +2,21 @@
 
 #include "include/ItrSearch.h"
 
-ItrSearch::ItrSearch(unsigned* myPtrData, unsigned mySizeData) {
+ItrSearch::ItrSearch(int* myPtrData, unsigned mySizeData) {
     ptrData  = myPtrData;
     sizeData = mySizeData;
 }
 
 ItrSearch::ItrSearch() {
-    ptrData = NULL;
+    ptrData = nullptr;
     sizeData  = 0;
 }
 
 ItrSearch::~ItrSearch() {
-    ptrData = NULL;
+    ptrData = nullptr;
 }
 
-int ItrSearch::GetFindIndex() {
+int64_t ItrSearch::GetFindIndex() {
     return findIndex;
 }
 
@@ -24,16 +24,16 @@ unsigned ItrSearch::GetSizeData() {
     return sizeData;
 }
 
-unsigned* ItrSearch::GetPtrData() {
+int* ItrSearch::GetPtrData() {
     return ptrData;
 }
 
-void ItrSearch::SetSortedData(unsigned* myPtrData, unsigned mySizeData) {
+void ItrSearch::SetSortedData(int* myPtrData, unsigned mySizeData) {
     ptrData  = myPtrData;
     sizeData = mySizeData;
 }
 
-int ItrSearch::Search(unsigned toFind, unsigned myLeft, unsigned myRight) {
+int64_t ItrSearch::Search(int toFind, unsigned myLeft, unsigned myRight) {
     unsigned left = myLeft;
 
     if (myRight == 0)
