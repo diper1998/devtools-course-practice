@@ -2,39 +2,38 @@
 
 #include "include/ItrSearch.h"
 
-ItrSearch::ItrSearch(unsigned* myPtrData, unsigned mySizeData){
+ItrSearch::ItrSearch(unsigned* myPtrData, unsigned mySizeData) {
     ptrData  = myPtrData;
     sizeData = mySizeData;
 }
 
-ItrSearch::ItrSearch(){
+ItrSearch::ItrSearch() {
     ptrData = NULL;
     sizeData  = 0;
 }
 
-ItrSearch::~ItrSearch(){
+ItrSearch::~ItrSearch() {
     ptrData = NULL;
 }
 
-int ItrSearch::GetFindIndex(){
+int ItrSearch::GetFindIndex() {
     return findIndex;
 }
 
-unsigned ItrSearch::GetSizeData(){
+unsigned ItrSearch::GetSizeData() {
     return sizeData;
 }
 
-unsigned* ItrSearch::GetPtrData(){
+unsigned* ItrSearch::GetPtrData() {
     return ptrData;
 }
 
-void ItrSearch::SetSortedData(unsigned* myPtrData, unsigned mySizeData){
+void ItrSearch::SetSortedData(unsigned* myPtrData, unsigned mySizeData) {
     ptrData  = myPtrData;
     sizeData = mySizeData;
 }
 
-int ItrSearch::Search(unsigned toFind){
-     
+int ItrSearch::Search(unsigned toFind) {
     unsigned mid;
     unsigned left = 0;
     unsigned right = sizeData - 1;
@@ -42,11 +41,11 @@ int ItrSearch::Search(unsigned toFind){
     while (ptrData[left] < toFind && ptrData[right] > toFind) {
         mid = left + ((toFind - ptrData[left]) * (right - left)) / (ptrData[right] - ptrData[left]);
 
-        if (ptrData[mid] < toFind)
+        if (ptrData[mid] < toFind) {
             left = mid + 1;
-        else if (ptrData[mid] > toFind)
+        } else if (ptrData[mid] > toFind) {
             right = mid - 1;
-        else {
+        } else {
             findIndex = mid;
             return findIndex;
         }
@@ -66,19 +65,19 @@ int ItrSearch::Search(unsigned toFind){
 }
 
 int ItrSearch::Search(unsigned toFind, unsigned myLeft, unsigned myRight){
-     
     unsigned mid;
     unsigned left = myLeft;
     unsigned right = myRight;
 
     while (ptrData[left] < toFind && ptrData[right] > toFind) {
-        mid = left + ((toFind - ptrData[left]) * (right - left)) / (ptrData[right] - ptrData[left]);
+        mid = left + ((toFind - ptrData[left]) * 
+        (right - left)) / (ptrData[right] - ptrData[left]);
 
-        if (ptrData[mid] < toFind)
+        if (ptrData[mid] < toFind) {
             left = mid + 1;
-        else if (ptrData[mid] > toFind)
+        } else if (ptrData[mid] > toFind) {
             right = mid - 1;
-        else {
+        } else {
             findIndex = mid;
             return findIndex;
         }
@@ -94,5 +93,5 @@ int ItrSearch::Search(unsigned toFind, unsigned myLeft, unsigned myRight){
     }
 
     findIndex = -1;
-    return findIndex; // Not found
+    return findIndex; //  Not found
 }
