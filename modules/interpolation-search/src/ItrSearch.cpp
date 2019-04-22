@@ -38,8 +38,7 @@ int ItrSearch::Search(unsigned toFind) {
     unsigned right = sizeData - 1;
 
     while (ptrData[left] < toFind && ptrData[right] > toFind) {
-        unsigned mid = 0;
-        mid = left + ((toFind - ptrData[left]) *
+        unsigned mid = left + ((toFind - ptrData[left]) *
         (right - left)) / (ptrData[right] - ptrData[left]);
 
         if (ptrData[mid] < toFind) {
@@ -70,8 +69,7 @@ int ItrSearch::Search(unsigned toFind, unsigned myLeft, unsigned myRight) {
     unsigned right = myRight;
 
     while (ptrData[left] < toFind && ptrData[right] > toFind) {
-        unsigned mid = 0;
-        mid = left + ((toFind - ptrData[left]) *
+        unsigned mid = left + ((toFind - ptrData[left]) *
         (right - left)) / (ptrData[right] - ptrData[left]);
 
         if (ptrData[mid] < toFind) {
