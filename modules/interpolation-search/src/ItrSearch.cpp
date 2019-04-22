@@ -70,7 +70,7 @@ int ItrSearch::Search(unsigned toFind, unsigned myLeft, unsigned myRight) {
     unsigned right = myRight;
 
     while (ptrData[left] < toFind && ptrData[right] > toFind) {
-        unsigned mid = myLeft;
+        unsigned mid = 0;
         mid = left + ((toFind - ptrData[left]) *
         (right - left)) / (ptrData[right] - ptrData[left]);
 
