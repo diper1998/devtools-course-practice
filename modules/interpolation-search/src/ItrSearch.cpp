@@ -34,11 +34,11 @@ void ItrSearch::SetSortedData(unsigned* myPtrData, unsigned mySizeData) {
 }
 
 int ItrSearch::Search(unsigned toFind) {
-    unsigned mid = 0;
     unsigned left = 0;
     unsigned right = sizeData - 1;
 
     while (ptrData[left] < toFind && ptrData[right] > toFind) {
+        unsigned mid = 0;
         mid = left + ((toFind - ptrData[left]) *
         (right - left)) / (ptrData[right] - ptrData[left]);
 
@@ -66,11 +66,11 @@ int ItrSearch::Search(unsigned toFind) {
 }
 
 int ItrSearch::Search(unsigned toFind, unsigned myLeft, unsigned myRight) {
-    unsigned mid = myLeft;
     unsigned left = myLeft;
     unsigned right = myRight;
 
     while (ptrData[left] < toFind && ptrData[right] > toFind) {
+        unsigned mid = myLeft;
         mid = left + ((toFind - ptrData[left]) *
         (right - left)) / (ptrData[right] - ptrData[left]);
 
