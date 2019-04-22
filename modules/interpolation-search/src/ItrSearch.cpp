@@ -33,7 +33,7 @@ void ItrSearch::SetSortedData(unsigned* myPtrData, unsigned mySizeData) {
     sizeData = mySizeData;
 }
 
-int ItrSearch::Search(unsigned toFind, unsigned myLeft = 0, unsigned myRight = 0) {
+int ItrSearch::Search(unsigned toFind, unsigned myLeft, unsigned myRight) {
     unsigned left = myLeft;
 
     if (myRight == 0)
