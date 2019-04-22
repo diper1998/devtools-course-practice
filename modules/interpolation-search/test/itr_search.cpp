@@ -15,7 +15,7 @@ TEST_F(ItrSearchTest, Check_Size) {
     ItrSearch mySearch(myData, mySize);
 
     // Assert
-    EXPECT_EQ(mySize, mySearch.GetSizeData()); 
+    EXPECT_EQ(mySize, mySearch.GetSizeData());
 }
 
 TEST_F(ItrSearchTest, Check_Ptr) {
@@ -35,7 +35,7 @@ TEST_F(ItrSearchTest, Can_Set) {
     unsigned myData[] = {4, 5, 6, 33, 200};
     unsigned mySize = 5;
     ItrSearch mySearch;
-    
+ 
     // Act
     mySearch.SetSortedData(myData, mySize);
 
