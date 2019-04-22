@@ -82,7 +82,7 @@ TEST_F(ItrSearchTest, Can_Find_3) {
     findIndex = mySearch.Search(2888);
 
     // Assert
-    EXPECT_EQ(2888, findIndex);
+    EXPECT_EQ(7, findIndex);
 }
 
 TEST_F(ItrSearchTest, Can_Find_4) {
@@ -96,7 +96,7 @@ TEST_F(ItrSearchTest, Can_Find_4) {
     findIndex = mySearch.Search(1);
 
     // Assert
-    EXPECT_EQ(2888, findIndex);
+    EXPECT_EQ(1, findIndex);
 }
 
 TEST_F(ItrSearchTest, Can_Get_Find_Index) {
