@@ -112,7 +112,7 @@ TEST_F(ItrSearchTest, Can_Get_Find_Index) {
     EXPECT_EQ(2, mySearch.GetFindIndex());
 }
 
-TEST_F(ItrSearchTest, Can_Undefined) {
+TEST_F(ItrSearchTest, Can_Undefined_1) {
     // Arrange
     unsigned myData[] = {4, 5, 6, 33, 99, 200, 248, 2888, 9992};
     unsigned mySize = 9;
@@ -121,6 +121,20 @@ TEST_F(ItrSearchTest, Can_Undefined) {
 
     // Act
     findIndex = mySearch.Search(69);
+
+    // Assert
+    EXPECT_EQ(-1, findIndex);
+}
+
+TEST_F(ItrSearchTest, Can_Undefind_2) {
+    // Arrange
+    unsigned myData[] = {1, 2, 3, 4, 5, 60, 72, 72, 77, 82, 90, 100};
+    unsigned mySize = 12;
+    unsigned findIndex = 0;
+    ItrSearch mySearch(myData, mySize);
+
+    // Act
+    findIndex = mySearch.Search(70);
 
     // Assert
     EXPECT_EQ(-1, findIndex);
@@ -182,7 +196,21 @@ TEST_F(ItrSearchTest, Can_Find_With_Param_4) {
     EXPECT_EQ(5, findIndex);
 }
 
-TEST_F(ItrSearchTest, Can_Undefind_With_Param) {
+TEST_F(ItrSearchTest, Can_Find_With_Param_5) {
+    // Arrange
+    unsigned myData[] = {0, 1, 2};
+    unsigned mySize = 3;
+    unsigned findIndex = 0;
+    ItrSearch mySearch(myData, mySize);
+
+    // Act
+    findIndex = mySearch.Search(1, 0, 2);
+
+    // Assert
+    EXPECT_EQ(1, findIndex);
+}
+
+TEST_F(ItrSearchTest, Can_Undefind_With_Param_1) {
     // Arrange
     unsigned myData[] = {4, 5, 6, 6, 6, 33, 99, 200, 248, 2888, 9992};
     unsigned mySize = 11;
@@ -191,6 +219,20 @@ TEST_F(ItrSearchTest, Can_Undefind_With_Param) {
 
     // Act
     findIndex = mySearch.Search(6, 5, 10);
+
+    // Assert
+    EXPECT_EQ(-1, findIndex);
+}
+
+TEST_F(ItrSearchTest, Can_Undefind_With_Param_2) {
+    // Arrange
+    unsigned myData[] = {1, 2, 3, 4, 5, 60, 72, 72, 77, 82, 90, 100};
+    unsigned mySize = 12;
+    unsigned findIndex = 0;
+    ItrSearch mySearch(myData, mySize);
+
+    // Act
+    findIndex = mySearch.Search(70, 0, 11);
 
     // Assert
     EXPECT_EQ(-1, findIndex);
