@@ -19,8 +19,7 @@ class ItrSearch {
     unsigned GetSizeData();
     unsigned* GetPtrData();
     void SetSortedData(unsigned* myPtrData, unsigned mySizeData);
-    int Search(unsigned toFind);
-    int Search(unsigned toFind, unsigned myLeft, unsigned myRight);
+    int Search(unsigned toFind, unsigned myLeft = 0, unsigned myRight = 0);
 };
 
 #endif  // MODULES_INTERPOLATION_SEARCH_INCLUDE_ITRSEARCH_H_"
