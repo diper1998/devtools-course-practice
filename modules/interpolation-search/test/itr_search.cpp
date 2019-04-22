@@ -35,7 +35,7 @@ TEST_F(ItrSearchTest, Can_Set) {
     unsigned myData[] = {4, 5, 6, 33, 200};
     unsigned mySize = 5;
     ItrSearch mySearch;
- 
+
     // Act
     mySearch.SetSortedData(myData, mySize);
 
@@ -55,6 +55,19 @@ TEST_F(ItrSearchTest, Can_Find) {
 
     // Assert
     EXPECT_EQ(2, findIndex);
+}
+
+TEST_F(ItrSearchTest, Can_Get_Find_Index) {
+    // Arrange
+    unsigned myData[] = {4, 5, 6, 33, 200};
+    unsigned mySize = 5;
+    ItrSearch mySearch(myData, mySize);
+
+    // Act
+    mySearch.Search(6);
+
+    // Assert
+    EXPECT_EQ(2, mySearch.GetFindIndex());
 }
 
 TEST_F(ItrSearchTest, Can_Undefined) {
